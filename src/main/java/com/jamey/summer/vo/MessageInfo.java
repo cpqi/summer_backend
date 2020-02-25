@@ -1,4 +1,4 @@
-package com.jamey.summer.pojo;
+package com.jamey.summer.vo;
 
 import java.util.Date;
 

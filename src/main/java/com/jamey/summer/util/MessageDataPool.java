@@ -3,7 +3,7 @@ package com.jamey.summer.util;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.jamey.summer.pojo.MessageInfo;
+import com.jamey.summer.vo.MessageInfo;
 
 import java.sql.Date;
 import java.text.ParseException;
@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DataPool {
+public class MessageDataPool {
 	
 	private static List<MessageInfo> messageList = new ArrayList<MessageInfo>();
 	
