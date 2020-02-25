@@ -12,7 +12,8 @@ public class CityDataPool {
 
 	static {
 
-		String filePath = CityDataPool.class.getClassLoader().getResource("city.csv").getFile();
+//		String filePath = CityDataPool.class.getClassLoader().getResource("city.csv").getFile();
+		String filePath = "/root/.m2/repository/com/jamey/summer_backend/0.0.1-SNAPSHOT/data/city.csv";
 		File file = new File(filePath);
 
 		List<String> lines = CSVUtil.getCSVLines(file);

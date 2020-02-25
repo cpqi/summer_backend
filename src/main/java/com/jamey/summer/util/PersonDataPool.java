@@ -15,7 +15,8 @@ public class PersonDataPool {
 
 	static {
 
-		String filePath = PersonDataPool.class.getClassLoader().getResource("0216.csv").getFile();
+//		String filePath = PersonDataPool.class.getClassLoader().getResource("0216.csv").getFile();
+		String filePath ="/root/.m2/repository/com/jamey/summer_backend/0.0.1-SNAPSHOT/data/0216.csv";
 		File file = new File(filePath);
 
 		List<String> lines = CSVUtil.getCSVLines(file);
