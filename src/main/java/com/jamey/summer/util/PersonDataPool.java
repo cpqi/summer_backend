@@ -7,24 +7,33 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import com.jamey.summer.vo.PersonInfo;
 
+@Component
 public class PersonDataPool {
+	
+	@Value("{data.path}")
+	private static String path;
 
 	private static List<PersonInfo> personList = new ArrayList<PersonInfo>();
 
 	static {
-
-//		String filePath = PersonDataPool.class.getClassLoader().getResource("0216.csv").getFile();
-		String filePath ="/root/.m2/repository/com/jamey/summer_backend/0.0.1-SNAPSHOT/data/0216.csv";
+		String filePath;
+		if(path==null||path.trim().length()==0) {
+			filePath = PersonDataPool.class.getClassLoader().getResource("0216.csv").getFile();
+		}else {
+			filePath = path;
+		}	
+		
 		File file = new File(filePath);
 
 		List<String> lines = CSVUtil.getCSVLines(file);
 
 		PersonInfo personInfo = null;
-		int i = 0;
 		for (String line : lines) {
-			System.out.println(++i);
 			String[] personArray = line.split(",");
 			personInfo = new PersonInfo();
 			personInfo.setId(Integer.valueOf(personArray[0].trim()));
