@@ -19,7 +19,7 @@ public class DairyController {
 	@ResponseBody
 	public boolean imageUpload(HttpServletRequest request) {
 		MultipartHttpServletRequest params=((MultipartHttpServletRequest) request); 
-		List<MultipartFile> files=((MultipartHttpServletRequest) request).getFiles("file");   
+		List<MultipartFile> files=((MultipartHttpServletRequest) request).getFiles("upload");   
         String name=params.getParameter("userid");  
         System.out.println("userid:"+name);  
         
